@@ -1,0 +1,21 @@
+.etiqueta-componente {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 8px 6px 12px;
+  border-radius: 16px;
+  background-color: #808080;
+}
+
+.etiqueta-texto {
+  font-size: 13px;
+  color: #000;
+  white-space: nowrap;
+}
+
+.etiqueta-borrar {
+  display: flex;
+  align-items: center;
+}
+

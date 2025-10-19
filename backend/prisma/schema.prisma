@@ -1,0 +1,52 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Nota {
+  id            Int      @id @default(autoincrement())
+  titulo        String   @default("")
+  contenido     String?  @db.Text
+  color         String   @default("#FFE4B5") @db.VarChar(7)
+  estaArchivado Boolean  @default(false) @map("esta_archivado")
+  estaFijado    Boolean  @default(false) @map("esta_fijado")
+  creadoEn      DateTime @default(now()) @map("creado_en") @db.Timestamp(6)
+  editadoEn     DateTime @default(now()) @updatedAt @map("editado_en") @db.Timestamp(6)
+  
+  // Relación muchos a muchos con etiquetas
+  etiquetas NotaEtiqueta[]
+  
+  @@map("notas")
+  @@index([estaArchivado], map: "idx_archivado")
+  @@index([estaFijado], map: "idx_fijado")
+}
+
+model Etiqueta {
+  id        Int      @id @default(autoincrement())
+  texto     String   @unique @db.VarChar(50)
+  color     String   @default("#808080") @db.VarChar(7)
+  creadoEn  DateTime @default(now()) @map("creado_en") @db.Timestamp(6)
+  
+  // Relación muchos a muchos con notas
+  notas NotaEtiqueta[]
+  
+  @@map("etiquetas")
+}
+
+model NotaEtiqueta {
+  notaId     Int @map("nota_id")
+  etiquetaId Int @map("etiqueta_id")
+  
+  nota     Nota     @relation(fields: [notaId], references: [id], onDelete: Cascade)
+  etiqueta Etiqueta @relation(fields: [etiquetaId], references: [id], onDelete: Cascade)
+  
+  @@id([notaId, etiquetaId])
+  @@map("notas_etiquetas")
+}

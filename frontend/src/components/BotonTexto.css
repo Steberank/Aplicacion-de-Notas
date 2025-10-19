@@ -1,0 +1,23 @@
+.boton-texto {
+  display: inline-block;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  color: #000;
+}
+
+.boton-texto:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.boton-texto:active {
+  transform: translateY(0);
+}
+

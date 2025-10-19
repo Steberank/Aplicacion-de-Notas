@@ -1,0 +1,96 @@
+/* Overlay para el popup */
+.anadir-etiqueta-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* Popup principal */
+.anadir-etiqueta-popup {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Header del popup */
+.anadir-etiqueta-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #f8f9fa;
+}
+
+.anadir-etiqueta-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #202124;
+}
+
+.cerrar-popup {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #5f6368;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.cerrar-popup:hover {
+  background-color: #e8eaed;
+}
+
+/* Contenido del popup */
+.anadir-etiqueta-content {
+  padding: 20px 24px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+/* Grid de etiquetas */
+.etiquetas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.etiqueta-item {
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.etiqueta-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Mensaje cuando no hay etiquetas */
+.sin-etiquetas {
+  text-align: center;
+  padding: 40px 20px;
+  color: #5f6368;
+}
+
+.sin-etiquetas p {
+  margin: 0;
+  font-size: 16px;
+}

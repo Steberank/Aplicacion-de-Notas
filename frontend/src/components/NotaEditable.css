@@ -1,0 +1,104 @@
+.nota {
+  width: 600px;
+  min-height: 182px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1001;
+}
+
+.nota-encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.nota-titulo {
+  flex: 1;
+}
+
+.input-titulo {
+  width: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 4px 0;
+  color: #000;
+}
+
+.input-titulo::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.boton-fijar {
+  display: flex;
+  align-items: center;
+}
+
+.nota-cuerpo {
+  flex: 1;
+  overflow: auto;
+}
+
+.textarea-contenido {
+  width: 100%;
+  min-height: 60px;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 14px;
+  resize: none;
+  font-family: inherit;
+  padding: 4px 0;
+  color: #000;
+  overflow: hidden;
+}
+
+.textarea-contenido::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.etiquetas-editado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  min-height: 20px;
+}
+
+.etiquetas {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.editado {
+  font-size: 11px;
+  color: rgba(0, 0, 0, 0.6);
+  white-space: nowrap;
+}
+
+.nota-pie {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.pie-botones {
+  display: flex;
+  gap: 8px;
+}
+
+.pie-cerrar {
+  display: flex;
+  align-items: center;
+}
+

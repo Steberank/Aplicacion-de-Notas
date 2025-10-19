@@ -1,0 +1,12 @@
+{
+  "name": "notes_spa",
+  "version": "1.0.0",
+  "description": "Proyecto Notas",
+  "license": "ISC",
+  "author": "Dan Stephano Scalzo",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "start"
+  }
+}

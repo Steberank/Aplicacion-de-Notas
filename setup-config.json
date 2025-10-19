@@ -1,0 +1,69 @@
+{
+  "app": {
+    "name": "Notes App",
+    "version": "1.0.0",
+    "description": "Aplicación de gestión de notas con React y Node.js"
+  },
+  "database": {
+    "type": "mysql",
+    "host": "localhost",
+    "port": 3306,
+    "name": "notesapp",
+    "user": "root",
+    "password": "",
+    "url": "mysql://root:@localhost:3306/notesapp"
+  },
+  "backend": {
+    "port": 5000,
+    "host": "localhost",
+    "env_file": "backend/.env"
+  },
+  "frontend": {
+    "port": 5173,
+    "host": "localhost",
+    "build_command": "npm run build",
+    "dev_command": "npm run dev"
+  },
+  "dependencies": {
+    "required": [
+      "node",
+      "npm",
+      "mysql"
+    ],
+    "node_version": ">=18.0.0",
+    "npm_version": ">=8.0.0"
+  },
+  "scripts": {
+    "setup": {
+      "description": "Configuración inicial completa",
+      "steps": [
+        "check_dependencies",
+        "setup_mysql",
+        "install_dependencies",
+        "setup_environment",
+        "setup_prisma"
+      ]
+    },
+    "start": {
+      "description": "Iniciar aplicación",
+      "steps": [
+        "run_backend",
+        "run_frontend"
+      ]
+    }
+  },
+  "platforms": {
+    "linux": {
+      "mysql_install": "sudo apt-get update && sudo apt-get install -y mysql-server",
+      "mysql_start": "sudo systemctl start mysql"
+    },
+    "macos": {
+      "mysql_install": "brew install mysql",
+      "mysql_start": "brew services start mysql"
+    },
+    "windows": {
+      "mysql_install": "Descargar desde https://dev.mysql.com/downloads/",
+      "mysql_start": "net start mysql"
+    }
+  }
+}
