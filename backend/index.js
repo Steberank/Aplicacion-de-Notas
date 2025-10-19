@@ -17,6 +17,15 @@ app.get('/', (req, res) => {
   res.json({ message: 'API de Notas funcionando correctamente' });
 });
 
+// Especifica dominios permitidos
+app.use(cors({
+  origin: [
+    'https://client-production-37c3.up.railway.app/',
+    'http://localhost:5173' // Para desarrollo local
+  ],
+  credentials: true
+}));
+
 app.use('/api/notas', notasRoutes);
 app.use('/api/etiquetas', etiquetasRoutes);
 const iniciarServidor = async () => {
