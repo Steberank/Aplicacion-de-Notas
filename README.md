@@ -224,20 +224,6 @@ NODE_ENV=development
 2. **Tag colors:** Modify array in `MenuEtiquetas.jsx`
 3. **Search configuration:** Adjust parameters in `Sidebar.jsx`
 
-## Deployment
-
-### Railway (Recommended)
-
-1. Connect repository to Railway
-2. Configure environment variables
-3. Railway will automatically run the build
-
-### Other Platforms
-
-- **Frontend:** Vercel, Netlify
-- **Backend:** Railway, Heroku, DigitalOcean
-- **Database:** PlanetScale, Railway MySQL
-
 ## Troubleshooting
 
 ### MySQL Connection Error
@@ -268,17 +254,3 @@ PORT=3001
 ## License
 
 This project is open source and available under the MIT license.
-
-## Contributing
-
-Contributions are welcome. Please:
-
-1. Fork the project
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Open a Pull Request
-
----
-
-**Enjoy managing your notes!**
